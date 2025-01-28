@@ -1,0 +1,518 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.home-div{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 80vh;
+}
+.div-elements{
+  width: 50%;
+  height: 40vh;
+  margin-bottom: 20px;
+}
+#postes-div{
+  height: 100%;
+  width: 70%;
+  margin:  20px 15%;
+  background-color: brown;
+}
+#postes-div{
+  padding: 30px;
+}
+#postes-div>h2{
+  font-size: 22px;
+  font-weight: 700;
+  
+}
+
+
+/* ! mercato */
+.mercato-div{
+  min-height: 90vh;
+}
+#revers-data{
+  display: flex;
+  flex-direction: column-reverse;
+}
+.player-details{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 99%;
+  background-color: brown;
+  height: 7vh;
+  margin: 10px 0.5%;
+}
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
+.buttons>button{
+  border-radius: 50%;
+  margin-left: 10px;
+  background-color: white;
+  border: 4px solid white;
+}
+.buttons>button:hover{
+  border: 4px solid brown;
+}
+.overview-player{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+}
+.overview-player>img{
+  height: 60px;
+  border: none;
+}
+.overview-player>ul{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 20%;
+  font-size: 22px;
+  font-weight: 800;
+}
+.overview-player>p{
+  font-size: 16px;
+  width: 30%;
+}
+.overview-player>ul>img{
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+}
+.title{
+  font-size: 33px;
+  font-weight: 700;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title>a>svg{
+  border-radius: 50%;
+  padding: 0; 
+}
+.title>a{
+  margin-left: 20px;
+  padding: 0;
+}
+.title>a:hover{
+  background-color: white;
+  border-radius: 50%;
+}
+
+/* ! cup  */
+.cup-div{
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.cup-div>h1{
+  font-size: 33px;
+  text-align: center;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.images-cups{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  width: 50%;
+  margin: 0 25%;
+}
+.images-cups>img{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: none;
+  margin-left: 20px;
+}
+.selection-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4vh;
+  width: 50%;
+  margin: 0 25%;
+}
+.selection-div>select{
+  width: 15%;
+  height: 20px;
+  border: 2px soild black;
+  color: black;
+  font-weight: 700;
+  text-align: center;
+  margin-left: 20px;
+}
+/* ! new match  */
+.new-match-div{
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.new-match-div>h1{
+  font-size: 33px;
+  font-weight: 700;
+}
+#cup-select-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  height: 10vh;
+}
+#cup-select-div>select{
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  background-color: brown;
+  color: black;
+  margin-left: 20px;
+}
+#cup-select-div>img{
+  border: 1px solid white;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+#details-match-div{
+  width: 50%;
+  margin: 0 25%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#details-match-div>h2{
+  font-size: 22px;
+}
+#details-match-div>p{
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 10px 0;
+}
+#details-match-div>p>input{
+  width: 300px;
+  margin-left: 20px;
+  padding: 0 5px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+}
+#result-match-div>h2{
+  font-size: 22px ;
+  text-align: center;
+  margin: 20px 0;
+}
+#result-match-div>input{
+  width: 50px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 800;
+  color: black;
+}
+.new-match-div>button{
+  margin-top: 40px;
+  border: none;
+  background-color: cadetblue;
+  color: black;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: 800;
+}
+.new-match-div>button:hover{
+  color: black;
+  background-color: white;
+}
+/* ! new player mecato page */
+.new-mercato-div{
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.new-mercato-div>h1{
+  font-size: 33px;
+  font-weight: 800;
+  margin: 20px 0 ;
+  text-align: center;
+}
+#old-club-details-div{
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+}
+#old-club-details-div>h2{
+  font-size: 22px;
+  text-align: center;
+  margin: 10px 0;
+}
+#old-club-details-div>div>h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px ;
+  font-weight: 700;
+}
+#old-club-details-div>div>h2>button{
+  margin-left: 10px;
+  border: none;
+  background-color: cadetblue;
+  color: black;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+#old-club-details-div>div>h2>button:hover{
+  background-color: white;
+  color: cadetblue;
+}
+#old-club-details-div>div>h2>span{
+  font-size: 18px;
+  margin-left: 10px;
+}
+#old-club-details-div>div>h2>input{
+  width: 200px;
+  border: none;
+  background-color: white;
+  color: black;
+  padding: 0 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+#old-club-details-div>div>div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+#old-club-details-div>div>div>select{
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  background-color: brown;
+  color: black;
+  font-size: 16px;
+}
+#old-club-details-div>div>div>img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border:1px white solid;
+  margin-left: 10px;
+}
+#old-club-details-div>div>p{
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#old-club-details-div>div>p>input{
+  margin-left: 10px;
+  border: none;
+  padding: 0 10px;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+}
+#details-player-div{
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#details-player-div>h2,#details-player-div>h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+#details-player-div>h2>input,#details-player-div>h3>input{
+  border: none;
+  background-color: white;
+  color: black;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-left: 10px;
+}
+#details-player-div>p{
+  font-size: 22px;
+  height: 5vh;
+}
+#detials-deal-div{
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#detials-deal-div>h2{
+  font-size: 22px;
+}
+#detials-deal-div>textarea{
+  width: 300px;
+  border: none;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+}
+#time-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#time-div>h3{
+  font-size: 20px;
+}
+#time-div>h3>input{
+  background-color: white;
+  color: black;
+  margin-left: 10px;
+}
+#time-div>input{
+  margin-left: 10px;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  width: 130px;
+  padding: 0 10px;
+}
+.new-mercato-div>button{
+  border: none;
+  background-color: cadetblue;
+  color: black;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 20px;
+}
+.new-mercato-div>button:hover{
+  color: black;
+  background-color: white;
+}
+
+
+/*  ! post page*/
+.posts-div{
+  min-height: 90vh;
+}
+.posts-div>h1{
+  font-size: 33px;
+  font-weight: 700;
+  text-align: center;
+  margin: 20px 0;
+}
+.posts-div>div{
+  margin: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap-reverse;
+}
+.posts-div>div>div{
+  height: 320px;
+  width: 350px;
+  background-color: aliceblue;
+  position: relative;
+  border-radius: 10px;
+  margin: 20px 40px;
+}
+.posts-div>div>div>img{
+  height: 60%;
+  background-color: black;
+  width: 100%;
+  border: none;
+  border-radius: 12px 12px 0 0;
+}
+.posts-div>div>div>p{
+  height: 40%;
+  color: black;
+  margin:0 5px;
+  font-weight: 600;
+}
+.posts-div>div>div>div{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.posts-div>div>div>div>button{
+  border-radius: 50%;
+  background-color: transparent;
+}
+.posts-div>div>div>div>button:nth-child(1){
+  border: 2px solid #E8403E;
+  margin-right: 5px;
+  color: #E8403E;
+}
+.posts-div>div>div>div>button:nth-child(1):hover{
+  background-color: #E8403E;
+  color: white;
+}
+.posts-div>div>div>div>button:nth-child(2){
+  border: 2px solid #3A76F5;
+  color: #3A76F5;
+}
+.posts-div>div>div>div>button:nth-child(2):hover{
+  background-color: #3A76F5;
+  color: white;
+}
