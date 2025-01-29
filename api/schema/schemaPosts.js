@@ -8,7 +8,6 @@ const poste = new Schema({
     video: String,
     date: { type: Date, default: Date.now },
     hidden: Boolean,
-    
   });
 
 const schemaPoste = new mongoose.model("poste", poste)
