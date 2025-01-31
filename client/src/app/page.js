@@ -1,5 +1,9 @@
 import "./globals.css";
+import jwt from 'jsonwebtoken';
+
 export default function Home() {
+  const token = jwt.sign({ time: new Date().toISOString() }, "SECRET_KEY", { expiresIn: "60d" });
+  console.log(token);
   return (
     <div className="home-page">
       <div className="blog">

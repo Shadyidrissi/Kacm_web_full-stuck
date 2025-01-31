@@ -1,27 +1,32 @@
 const express = require("express");
 const mongoose = require("mongoose");
+require("dotenv").config(); // تحميل المتغيرات البيئية
+
 const app = express();
+const schemaClub = require("./schema/schemaClubs");
+const verifyToken = require("./Middleware/verifyToken");
 
+app.use(express.json());
 
-//! API Admin
-app.get("/", (req, res) => {
-  console.log("hello");
-  res.send("hello");
-});
-
-//! API Clubs Cups
-
-
-
-
-
-
-app.listen(4000, async () => {
+// API محمي بالتوكن
+app.post("/api_cup", verifyToken, async (req, res) => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/kacm");
-    console.log("data base is runing");
+    const { name, logo } = req.body;
+    const data = new schemaClub({ name, logo });
+    await data.save();
+    res.status(201).json({ message: "تم حفظ الكأس بنجاح", data });
   } catch (error) {
     console.log(error);
+    res.status(500).json({ error: "خطأ داخلي في الخادم" });
   }
-  console.log("server is runing");
+});
+
+app.listen(process.env.PORT, async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("✅ تم الاتصال بقاعدة البيانات");
+  } catch (error) {
+    console.log("❌", error);
+  }
+  console.log(`✅ الخادم يعمل على المنفذ ${process.env.PORT}`);
 });
