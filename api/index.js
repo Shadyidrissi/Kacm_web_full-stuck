@@ -51,6 +51,38 @@ app.get("/api_cup/:id", verifyToken, async (req, res) => {
 });
 
 
+//? API Delete cup by ID
+app.delete("/api_cup/:id", verifyToken, async (req, res) => {
+  const id = req.params.id; // استخراج الـ id من الطلب
+  try {
+    const data = await schemaClub.findByIdAndDelete(id); // البحث عن الكوب باستخدام الـ id
+    if (!data) {
+      return res.status(404).json({ error: "❌ Cup not found" });
+    }
+    res.status(200).json({ message: "✅ Cup Retrieved", data });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "❌ Error on Server" });
+  }
+});
+
+
+//? API Delete all cup  
+app.delete("/api_cup", verifyToken, async (req, res) => {
+  const id = req.params.id; // استخراج الـ id من الطلب
+  try {
+    const data = await schemaClub.deleteMany(); // البحث عن الكوب باستخدام الـ id
+    if (!data) {
+      return res.status(404).json({ error: "❌ Cup not found" });
+    }
+    res.status(200).json({ message: "✅ Cup Retrieved", data });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "❌ Error on Server" });
+  }
+});
+
+
 
 
 
