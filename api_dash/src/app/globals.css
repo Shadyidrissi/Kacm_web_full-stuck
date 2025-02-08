@@ -2,20 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*! Home */
+.home-page {
+  height: 934px;
+  background-color: aliceblue;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+#home {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+#home > img {
+  height: 200px;
+  width: 200px;
+}
+#home > h2 {
+  font-size: 44px;
+  font-weight: 700;
+}
+/*! Nav bar */
+#navbar {
+  height: 934px;
+  width: 300px;
+  background-color: rgb(233, 144, 144);
+}
+#navbar > a {
+  font-size: 22px;
+  font-weight: 900;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#navbar > ul {
+  height: 800px;
+  display: flex;
+  /* justify-content: ; */
+  flex-direction: column;
+  align-items: center;
+}
+#navbar > ul > a {
+  margin: 2px 4%;
+  /* height: 30px; */
+  padding: 20px;
+  width: 96%;
+  font-size: 20px;
+  font-weight: 600;
+  border: 1px solid black;
+}
+#navbar > ul > a:hover {
+  background-color: black;
+  color: white;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ! club */
+.club {
+  height: 900px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  width: 84%;
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.title {
+  font-size: 33px;
+  font-weight: 600;
+  height: 50px;
+}
+.cards-clubs {
+  height: 850px;
+  width: 100%;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  /* background-color: black; */
+}
+.card-club {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  border: 0.3px solid black;
+  margin: 10px 20px;
+}
+.card-club > img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 7px;
+}
+.card-club > h3 {
+  /* height: 200px; */
+  font-size: 20px;
+  font-weight: 700;
+}
+.card-club:hover {
+  background-color: black;
+  color: white;
 }

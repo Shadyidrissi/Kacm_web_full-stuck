@@ -3,8 +3,9 @@ const { Schema } = mongoose;
 
 
 const clubs = new Schema({
-  name: { type: String},
+  name: { type: String },
   logo: { type: String },
+  cupType: { type: String }
 });
 
 const schemaClub = new mongoose.model("Club", clubs)
